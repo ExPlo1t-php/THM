@@ -110,3 +110,9 @@ Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-108-generic x86_64) potential PE
 containes a rot47 cipher:
 ,LQ?2>6QiQ$JDE6>Q[QA2DDQiQD2J5C2H?=J:?8A:4EFC6QN.
   decrypted:[{"name":"System" "pass":"saydrawnlyingpicture"}]
+  
+  ## root flag
+after running linpeas we have a cronjob running as root which executes Curl against overpass.thm/dwnloads/src/buildscript.sh and pipes its contents over to bash..
+we modify the /etc/hosts to our machine's ip and run an netcat listener with the buildscript.sh as a reverseshell
+ and host the download/src with a simple python http server
+ ### nc -lvnp 443
